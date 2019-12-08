@@ -29,6 +29,7 @@ const AddCost = ({ setIsAddModal }) => {
   const handleOnClear = () => {
     setInputValue('');
     setAmount('');
+    setDate(new Date());
   };
 
   const handleSetCosts = () => {

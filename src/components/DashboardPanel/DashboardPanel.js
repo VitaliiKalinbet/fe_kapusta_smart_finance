@@ -35,14 +35,14 @@ function DashboardPanel() {
     )
     .sort((currCost, nextCost) => {
       return (
-        moment(nextCost.date, 'YYYY-MM-DD').valueOf() -
-        moment(currCost.date, 'YYYY-MM-DD').valueOf()
+        moment(nextCost.date, 'YYYY-MM-DD HH:mm:ss.SSS').unix() -
+        moment(currCost.date, 'YYYY-MM-DD HH:mm:ss.SSS').unix()
       );
     })
     .map(cost => {
       return {
         id: cost.costsId,
-        date: moment(cost.date, 'YYYY-MM-DD'),
+        date: moment(cost.date, 'YYYY-MM-DD HH:mm:ss.SSS'),
         description: cost.product.name,
         category: cost.product.category.name,
         amount: cost.amount,
